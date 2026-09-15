@@ -3,897 +3,602 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priority Success Associates | Therapy & Peer Support in Charlotte, NC</title>
-    <meta name="description" content="Priority Success Associates provides compassionate outpatient therapy and peer support services for individuals and families in Charlotte, NC.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Inline specific styles for homepage that don't belong in global -->
-    <style>
-        .hero {
-            height: 900px;
-            min-height: 900px;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background-color: #111;
-            overflow: hidden;
-        }
-
-        .hero-slider-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-position: center right;
-            background-size: cover;
-            background-repeat: no-repeat;
-            opacity: 0;
-            z-index: 1;
-            animation: heroFadeCycle 18s ease-in-out infinite;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-              90deg,
-              rgba(44, 48, 46, 0.95) 0%,
-              rgba(44, 48, 46, 0.85) 35%,
-              rgba(44, 48, 46, 0.1) 45%,
-              rgba(44, 48, 46, 0) 50%
-            );
-            z-index: 2;
-        }
-
-        @keyframes heroFadeCycle {
-            0% { opacity: 0; }
-            11% { opacity: 1; }
-            33% { opacity: 1; }
-            44% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-        
-        .hero-container {
-            width: 100%;
-            max-width: 1500px;
-            margin: 0 auto;
-            padding: 0 var(--space-md);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0;
-            text-align: left;
-        }
-
-
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        
-        .hero-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 52px;
-            padding: 0 30px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 16px;
-            text-transform: capitalize;
-            letter-spacing: 0.5px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .hero-btn-primary {
-            background-color: var(--warm-gold);
-            color: var(--white);
-            border: 2px solid var(--warm-gold);
-        }
-
-        .hero-btn-primary:hover {
-            background-color: var(--deep-green);
-            border-color: var(--deep-green);
-        }
-
-        .hero-btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
-        }
-
-        .hero-btn-outline:hover {
-            background-color: var(--deep-green);
-            border-color: var(--deep-green);
-        }
-
-        @media (max-width: 992px) {
-            .hero { height: 780px; }
-            .hero h1 { font-size: 48px !important; }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                height: 820px;
-            }
-            .hero-overlay {
-                background: linear-gradient(
-                  90deg,
-                  rgba(44,48,46,0.95) 0%,
-                  rgba(44,48,46,0.85) 60%,
-                  rgba(44,48,46,0.6) 100%
-                );
-            }
-            .hero-container { padding: 32px 24px; }
-            .hero h1 { font-size: 42px !important; }
-        }
-
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            align-items: center;
-        }
-        
-        .eyebrow {
-            color: var(--warm-gold);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .image-wrapper {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-        }
-        
-        .image-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--warm-gold);
-            border-radius: var(--radius-lg);
-            transform: translate(15px, 15px);
-            z-index: -1;
-            transition: transform var(--transition-normal);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: var(--space-md);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-            border-top: 4px solid transparent;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-top-color: var(--warm-gold);
-        }
-
-        .service-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--soft-cream-dark);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: var(--deep-green);
-        }
-
-        .benefits-list {
-            list-style: none;
-            margin-top: var(--space-md);
-        }
-
-        .benefits-list li {
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .benefits-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--warm-gold);
-            font-weight: bold;
-        }
-        
-        .contact-form-wrapper {
-            background: var(--white);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: var(--radius-sm);
-            font-family: var(--font-body);
-            font-size: 1rem;
-            transition: border-color var(--transition-fast);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--deep-green);
-        }
-
-        @media (max-width: 768px) {
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            .hero-buttons {
-                flex-direction: column;
-            }
-            .image-wrapper::after {
-                display: none;
-            }
-        }
-    </style>
+    <title>Priority Success Associates | Behavioral Health & Peer Support Services</title>
+    <meta name="description" content="Compassionate, person-centered outpatient therapy and peer support services designed to empower individuals and families to build resilience, independence, and lasting success.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style3.css">
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-left">
-                <span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--warm-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    Mon to Fri: 9:00am to 6:00pm
-                </span>
-                <span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--warm-gold)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    toppriority2021@gmail.com
-                </span>
-            </div>
-            <div class="top-bar-right">
-                <a href="#" class="social-circle">f</a>
-                <a href="#" class="social-circle">in</a>
-                <a href="#" class="social-circle">ig</a>
-            </div>
-        </div>
-    </div>
-
     <!-- Header -->
-    <header class="site-header">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="brand-title">Priority Success</span>
-                    <span class="brand-subtitle">Associates</span>
-                </a>
-            </div>
-            
-            <button class="mobile-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Contact Us</a></li>
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Priority Success Associates Logo" style="height: 80px;">
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="who-we-are.html">Who We Are</a></li>
+                    <li class="nav-dropdown">
+                        <a href="services.html">Services <span class="dropdown-chevron">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="outpatient-therapy.html">Outpatient Therapy</a></li>
+                            <li><a href="individual-therapy.html">Individual Therapy</a></li>
+                            <li><a href="couples-family.html">Couples &amp; Family</a></li>
+                            <li><a href="youth-adolescent.html">Youth &amp; Adolescent</a></li>
+                            <li><a href="substance-use-support.html">Substance Use Support</a></li>
+                            <li><a href="peer-support-services.html">Peer Support Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
                 </ul>
-                <a href="#" class="btn-icon btn-gold" style="margin-left: 2rem;"><span class="icon-circle"><i class="fas fa-arrow-right" style="transform: rotate(-45deg);"></i></span>Book Appointment</a>
             </nav>
+
+            <div class="header-actions">
+                <a href="contact-us.html" class="btn btn-primary btn-header" style="padding: 0.75rem 1.5rem;">Book An Appointment</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
         </div>
     </header>
 
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <a href="index.html" class="brand-logo" aria-label="Priority Success Associates">
+                <img src="assets/images/logo.png" alt="Priority Success Associates Logo">
+            </a>
+            <button class="drawer-close" id="drawerClose" aria-label="Close Menu">&times;</button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="index.html" class="drawer-link active">Home</a>
+            <a href="about-us.html" class="drawer-link">About Us</a>
+            <a href="who-we-are.html" class="drawer-link">Who We Are</a>
+            <div class="drawer-dropdown">
+                <a href="services.html" class="drawer-link drawer-dropdown-toggle">
+                    Our Services <span class="drawer-arrow">&#9662;</span>
+                </a>
+                <div class="drawer-subnav">
+                    <a href="outpatient-therapy.html" class="drawer-sublink">Outpatient Therapy</a>
+                    <a href="individual-therapy.html" class="drawer-sublink">Individual Therapy</a>
+                    <a href="couples-family.html" class="drawer-sublink">Couples &amp; Family</a>
+                    <a href="youth-adolescent.html" class="drawer-sublink">Youth &amp; Adolescent</a>
+                    <a href="substance-use-support.html" class="drawer-sublink">Substance Use Support</a>
+                    <a href="peer-support-services.html" class="drawer-sublink">Peer Support Services</a>
+                </div>
+            </div>
+            <a href="testimonials.html" class="drawer-link">Testimonials</a>
+            <a href="contact-us.html" class="drawer-link">Contact Us</a>
+        </nav>
+        <div class="drawer-footer">
+            <a href="contact-us.html" class="btn btn-primary btn-full">Book An Appointment</a>
+            <a href="tel:7043221178" class="drawer-phone">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; margin-right: 6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                (704) 322-1178
+            </a>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section class="hero">
-        <!-- Fullwidth Background Slider with Fade Animation -->
-        <div class="hero-slider-bg" style="background-image: url('assets/images/hero-people-1.jpg'); animation-delay: -2s;"></div>
-        <div class="hero-slider-bg" style="background-image: url('assets/images/hero-people-2.jpg'); animation-delay: 4s;"></div>
-        <div class="hero-slider-bg" style="background-image: url('assets/images/hero-people-3.jpg'); animation-delay: 10s;"></div>
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            
+            <div class="hero-content">
+                <span class="hero-welcome">Welcome to Priority Success Associates</span>
+                <h1>Change Your Mind.<br>Change Your Life.</h1>
+                <p class="hero-subtitle">Compassionate, personalized care and peer support designed to empower you to navigate life's challenges, discover your strengths, and achieve lasting independence and success in a warm, welcoming environment.</p>
+                <div class="hero-cta" style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                    <a href="#contact" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding-right: 1.25rem;">
+                        Get Started
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="hero-testimonials">
+                    <div class="testimonial-avatars">
+                        <img src="assets/images/avatar_1.jpg" alt="Client Testimonial">
+                        <img src="assets/images/avatar_2.jpg" alt="Client Testimonial">
+                        <img src="assets/images/avatar_3.jpg" alt="Client Testimonial">
+                    </div>
+                    <div class="hero-testimonials-text">
+                        <strong>500+ Testimonials</strong>
+                        <span>Listen to what they say about us.</span>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Hero Overlay -->
-        <div class="hero-overlay"></div>
+            <div class="hero-visuals">
+                <img src="assets/images/Untitled design (3).png" alt="Therapist" class="hero-main-img">
+                
+                <div class="hero-shape">
+                    <div class="hero-badges">
+                        <div class="hero-badge">Psychology</div>
+                        <div class="hero-badge">Mental Health</div>
+                        <div class="hero-badge">Mental Well-Being</div>
+                    </div>
+                    
+                    <div class="float-stats">
+                        <img src="assets/images/consulted_badge_thumb.jpg" alt="Consulted Clients">
+                        <div>
+                            <strong>5,000 Consulted Clients</strong>
+                            <p>Our experts have helped many client lives.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Hero Content -->
-        <div class="hero-container" style="position: relative; z-index: 5;">
-            <div class="hero-content fade-up">
-                <h1 style="color: var(--white); font-size: clamp(3rem, 5vw, 4.5rem); font-family: 'Playfair Display', serif; line-height: 1.15; margin-bottom: 24px; text-transform: uppercase;">
-                    Change Your Mind.<br>
-                    <span style="color: var(--warm-gold);">Change Your Life.</span>
-                </h1>
-                <p class="hero-desc" style="color: #e5e7eb; font-family: 'Poppins', sans-serif; font-size: 16px; margin-bottom: 40px; line-height: 1.8; max-width: 550px;">
-                    Compassionate, accessible outpatient therapy and peer support services designed to empower individuals and families to create meaningful change.
-                </p>
-                <div class="hero-buttons">
-                    <a href="services.html" class="btn-icon btn-gold"><span class="icon-circle"><i class="fas fa-arrow-right" style="transform: rotate(-45deg);"></i></span>Our Services</a>
-                    <a href="contact.html" class="btn-icon btn-outline"><span class="icon-circle"><i class="fas fa-arrow-right" style="transform: rotate(-45deg);"></i></span>Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container about-grid-new">
+            
+            <!-- Left Side -->
+            <div class="about-left">
+                <div class="about-main-img-wrapper">
+                    <div class="about-pattern-bg"></div>
+                    <img src="assets/images/about_main_therapist.jpg" class="about-main-img" alt="Therapist with client">
+                </div>
+                
+                <div class="about-mission-card">
+                    <h3 class="mission-title">Our Mission</h3>
+                    <p>We are committed to creating a supportive, inclusive, and person-centered environment where every individual feels seen, heard, and valued. Through culturally responsive care and evidence-based practices, we empower individuals, couples, families, and communities to build healthier, stronger, and more fulfilling lives.</p>
+                    <div class="mission-decoration"></div>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="about-right">
+                <div class="section-pre-heading">
+                    <div class="pre-heading-line"></div>
+                    ABOUT US
+                </div>
+                <h2>Guiding You Toward Greater Independence, Stability, and Success</h2>
+                <p class="about-text">At Priority Success Associates, we believe that every individual has the capacity for meaningful growth. We offer compassionate, professional, and accessible behavioral health services designed to meet you wherever you are on your personal journey.</p>
+                <p class="about-text">Our person-centered approach focuses on respect, dignity, and individualized care. Whether you are working through personal distress, navigating relationship difficulties, or seeking structured peer guidance, we walk alongside you with practical tools and steady encouragement.</p>
+                <p class="about-text">By fostering resilience, strengthening communication, and promoting self-advocacy, we help our clients build stronger foundations for today and brighter possibilities for tomorrow.</p>
+                
+                <div class="about-icons">
+                    <div class="about-icon-item">
+                        <div class="icon-circle bg-green">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </div>
+                        <span>Compassion<br>in Action</span>
+                    </div>
+                    <div class="about-icon-item">
+                        <div class="icon-circle bg-terracotta">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <span>Stronger<br>Communities</span>
+                    </div>
+                    <div class="about-icon-item">
+                        <div class="icon-circle bg-gold">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                        </div>
+                        <span>Lasting<br>Change</span>
+                    </div>
+                    <div class="about-icon-item">
+                        <div class="icon-circle bg-rust">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        </div>
+                        <span>Hope for<br>a Brighter Future</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <a href="#who-we-are" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.95rem;">Meet Our Team &rarr;</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Who We Are Section -->
+    <section id="who-we-are" class="who-we-are">
+        <div class="container">
+            <div class="who-we-are-header">
+                <div class="section-pre-heading center">
+                    <div class="pre-heading-line"></div>
+                    WHO WE ARE
+                </div>
+                <h2>Dedicated Professionals Committed to Your Journey</h2>
+                <p>Priority Success Associates is made up of dedicated professionals who are committed to providing compassionate, respectful, and individualized support. We work collaboratively to create a safe, welcoming foundation for healing, self-discovery, and lasting personal success.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Staff Card 1 -->
+                <!-- Company Note: To update this card, replace image src, staff name, position, and bio below -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="assets/images/staff_1.jpg" alt="Staff Member Photo Placeholder" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <span class="team-role">Position / Role</span>
+                        <h3 class="team-name">Staff Member Name</h3>
+                        <p class="team-bio">Add staff biography here. A brief description of clinical focus, therapeutic philosophy, and dedication to client-centered care.</p>
+                    </div>
+                </div>
+
+                <!-- Staff Card 2 -->
+                <!-- Company Note: To update this card, replace image src, staff name, position, and bio below -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="assets/images/staff_2.jpg" alt="Staff Member Photo Placeholder" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <span class="team-role">Position / Role</span>
+                        <h3 class="team-name">Staff Member Name</h3>
+                        <p class="team-bio">Add staff biography here. A brief description of clinical focus, therapeutic philosophy, and dedication to client-centered care.</p>
+                    </div>
+                </div>
+
+                <!-- Staff Card 3 -->
+                <!-- Company Note: To update this card, replace image src, staff name, position, and bio below -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="assets/images/staff_3.jpg" alt="Staff Member Photo Placeholder" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <span class="team-role">Position / Role</span>
+                        <h3 class="team-name">Staff Member Name</h3>
+                        <p class="team-bio">Add staff biography here. A brief description of clinical focus, therapeutic philosophy, and dedication to client-centered care.</p>
+                    </div>
+                </div>
+
+                <!-- Staff Card 4 -->
+                <!-- Company Note: To update this card, replace image src, staff name, position, and bio below -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="assets/images/staff_4.jpg" alt="Staff Member Photo Placeholder" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <span class="team-role">Position / Role</span>
+                        <h3 class="team-name">Staff Member Name</h3>
+                        <p class="team-bio">Add staff biography here. A brief description of clinical focus, therapeutic philosophy, and dedication to client-centered care.</p>
+                    </div>
                 </div>
             </div>
         </div>
-
     </section>
 
-    <!-- Welcome Section -->
-    <section class="bg-white" style="padding: 100px 0;">
-        <div class="container two-column fade-up" style="align-items: center;">
-            <div class="image-wrapper" style="position: relative;">
-                <img src="assets/images/hero-about.jpg" alt="Supportive counseling environment" style="width: 100%; height: 600px; object-fit: cover; border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);">
-                <!-- Decorative element -->
-                <div style="position: absolute; bottom: -20px; right: -20px; width: 120px; height: 120px; background-color: var(--soft-cream); z-index: -1; border-radius: 50%;"></div>
-            </div>
-            <div style="padding-left: 20px;">
-                <span class="eyebrow" style="color: var(--warm-gold); font-weight: 600; letter-spacing: 2px;">SUPPORT FOR YOUR JOURNEY</span>
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 48px; line-height: 1.1; margin-bottom: 24px; color: var(--charcoal);">You Don't Have to Navigate Life's Challenges Alone.</h2>
-                <p style="font-size: 16px; line-height: 1.7; color: var(--charcoal-light); margin-bottom: 32px;">Our mission is to provide compassionate, accessible outpatient therapy and peer support services that empower individuals and families to overcome challenges, recognize their strengths, develop practical skills, and create meaningful change in their lives.</p>
-                <a href="about.html" class="btn-icon btn-gold"><span class="icon-circle"><i class="fas fa-arrow-right" style="transform: rotate(-45deg);"></i></span>Learn More About Us</a>
-                
-                <!-- Editorial Quote Element -->
-                <div style="margin-top: 48px; padding: 24px 0 24px 32px; border-left: 3px solid var(--warm-gold); position: relative;">
-                    <div style="position: absolute; top: 0; left: -15px; font-size: 80px; color: rgba(220, 180, 120, 0.15); font-family: 'Playfair Display', serif; line-height: 1; z-index: -1;">&ldquo;</div>
-                    <p style="font-family: 'Playfair Display', serif; font-size: 24px; font-style: italic; color: var(--charcoal); margin-bottom: 12px; line-height: 1.4;">"A space designed for true healing and meaningful change."</p>
-                    <p style="font-size: 16px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--deep-green); font-weight: 700; margin: 0;">— Priority Success Associates</p>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="services-header text-center">
+                <div class="section-pre-heading center light">
+                    <div class="pre-heading-line"></div>
+                    OUR SERVICES
                 </div>
+                <h2>Services That Meet You Where You Are</h2>
+                <p>Comprehensive, compassionate behavioral health and peer support programs tailored to your unique journey toward wellness.</p>
+            </div>
+            
+            <div class="services-grid-new">
+                
+                <!-- Service 1: Outpatient Therapy -->
+                <div class="service-card-new">
+                    <div class="service-img-wrapper-new">
+                        <div class="service-badge">01 &bull; OUTPATIENT CARE</div>
+                        <img src="assets/images/service_outpatient.jpg" alt="Outpatient Therapy" loading="lazy">
+                    </div>
+                    <div class="service-content-new">
+                        <h3>OUTPATIENT THERAPY</h3>
+                        <p>Professional outpatient therapy designed to help clients address emotional concerns, anxiety, life transitions, and personal challenges in a confidential setting.</p>
+                        <a href="outpatient-therapy.html" class="service-link">LEARN MORE &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Individual Therapy -->
+                <div class="service-card-new">
+                    <div class="service-img-wrapper-new">
+                        <div class="service-badge">02 &bull; INDIVIDUAL CARE</div>
+                        <img src="assets/images/service_individual.jpg" alt="Individual Therapy" loading="lazy">
+                    </div>
+                    <div class="service-content-new">
+                        <h3>INDIVIDUAL THERAPY</h3>
+                        <p>One-on-one sessions focused on each client's unique goals, strengths, and needs, providing practical tools to foster healthy coping strategies and emotional growth.</p>
+                        <a href="individual-therapy.html" class="service-link">LEARN MORE &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Couples & Family Therapy -->
+                <div class="service-card-new">
+                    <div class="service-img-wrapper-new">
+                        <div class="service-badge">03 &bull; RELATIONSHIPS</div>
+                        <img src="assets/images/service_couples.jpg" alt="Couples and Family Therapy" loading="lazy">
+                    </div>
+                    <div class="service-content-new">
+                        <h3>COUPLES & FAMILY THERAPY</h3>
+                        <p>Collaborative counseling aimed at strengthening communication, resolving conflict, rebuilding trust, and establishing healthier relational patterns.</p>
+                        <a href="couples-family.html" class="service-link">LEARN MORE &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Youth & Adolescent Therapy -->
+                <div class="service-card-new">
+                    <div class="service-img-wrapper-new">
+                        <div class="service-badge">04 &bull; YOUTH CARE</div>
+                        <img src="assets/images/service_youth.jpg" alt="Youth and Adolescent Therapy" loading="lazy">
+                    </div>
+                    <div class="service-content-new">
+                        <h3>YOUTH & ADOLESCENT THERAPY</h3>
+                        <p>Age-appropriate guidance offering a safe space where young people can explore their feelings, build resilience, and navigate developmental and family challenges.</p>
+                        <a href="youth-adolescent.html" class="service-link">LEARN MORE &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Substance Use & Recovery Support -->
+                <div class="service-card-new">
+                    <div class="service-img-wrapper-new">
+                        <div class="service-badge">05 &bull; RECOVERY SUPPORT</div>
+                        <img src="assets/images/service_substance.jpg" alt="Substance Use and Recovery Support" loading="lazy">
+                    </div>
+                    <div class="service-content-new">
+                        <h3>SUBSTANCE USE & RECOVERY</h3>
+                        <p>Compassionate, non-judgmental support for individuals working through substance use challenges, relapse prevention strategies, and maintaining positive life change.</p>
+                        <a href="substance-use-support.html" class="service-link">LEARN MORE &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 6: Peer Support Services -->
+                <div class="service-card-new">
+                    <div class="service-img-wrapper-new">
+                        <div class="service-badge">06 &bull; PEER SUPPORT</div>
+                        <img src="assets/images/service_peer.jpg" alt="Peer Support Services" loading="lazy">
+                    </div>
+                    <div class="service-content-new">
+                        <h3>PEER SUPPORT SERVICES</h3>
+                        <p>Empowering, community-focused support provided by specialists with lived experience, helping clients build self-advocacy skills, connection, and long-term stability.</p>
+                        <a href="peer-support-services.html" class="service-link">LEARN MORE &rarr;</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- How It Works Section -->
-    <section class="section" style="background-color: var(--soft-cream); padding: 100px 0;">
-        <div class="container fade-up">
-            <!-- Header Row -->
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 80px; flex-wrap: wrap; gap: 30px;">
-                <div style="max-width: 600px;">
-                    <span class="eyebrow" style="display: block; color: var(--warm-gold); font-weight: 600; letter-spacing: 2px; margin-bottom: 16px; font-size: 16px; text-transform: uppercase;">HOW IT WORKS</span>
-                    <h2 style="font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 0; line-height: 1.1;">Guiding you our <span style="color: var(--deep-green);">therapy process</span></h2>
-                </div>
-                <div style="max-width: 500px; text-align: right;">
-                    <p style="margin-bottom: 24px; font-size: 16px; color: var(--charcoal-light);">We provide a range of therapeutic services designed to empower individuals on their journey to mental wellness. Through personalized counseling.</p>
-                    <a href="services.html" class="btn-icon btn-gold"><span class="icon-circle"><i class="fas fa-arrow-right" style="transform: rotate(-45deg);"></i></span>Discover More</a>
-                </div>
+    <section id="approach" class="process">
+        <div class="container">
+            <div class="section-pre-heading center">
+                <div class="pre-heading-line"></div>
+                HOW IT WORKS
             </div>
-
-            <!-- Process Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; position: relative;">
-                
-                <!-- SVG connecting curve (desktop only) -->
-                <svg class="hide-on-mobile" width="100%" height="130" style="position: absolute; top: 40px; left: 12.5%; width: 75%; z-index: 1; pointer-events: none;" preserveAspectRatio="none" viewBox="0 0 1000 130">
-                    <path d="M 0,0 C 150,0 150,130 333.3,130 C 500,130 500,0 666.6,0 C 833,0 833,130 1000,130" stroke="var(--warm-gold)" stroke-width="2" stroke-dasharray="6,6" fill="none" vector-effect="non-scaling-stroke"/>
-                </svg>
-
-                <!-- Step 1 -->
-                <div style="position: relative; z-index: 2;">
-                    <div style="width: 80px; height: 80px; background-color: var(--deep-green); color: white; display: flex; align-items: center; justify-content: center; font-size: 32px; font-family: 'Playfair Display', serif; border-radius: 8px; margin-bottom: 24px; box-shadow: 0 10px 20px rgba(11,94,60,0.2);">01</div>
-                    <h4 style="font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 12px;">01. Book appointment</h4>
-                    <p style="font-size: 16px; color: var(--charcoal-light); line-height: 1.6;">Scheduling appointment with us is simple and convenient.</p>
+            <h2>How It Works</h2>
+            <p>Your journey to wellness should be clear, respectful, and supportive every step of the way.</p>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h4>Reach Out</h4>
+                    <p style="font-size: 1rem; margin-top: 10px;">Contact us online or call our helpline to begin your initial consultation.</p>
                 </div>
-                
-                <!-- Step 2 -->
-                <div class="step-down" style="position: relative; z-index: 2; padding-top: 130px;">
-                    <h4 style="font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 12px;">02. Initial consultation</h4>
-                    <p style="font-size: 16px; color: var(--charcoal-light); line-height: 1.6; margin-bottom: 24px;">An open discussion about your goals and needs.</p>
-                    <div style="width: 80px; height: 80px; background-color: var(--warm-gold); color: white; display: flex; align-items: center; justify-content: center; font-size: 32px; font-family: 'Playfair Display', serif; border-radius: 8px; box-shadow: 0 10px 20px rgba(194,155,69,0.2);">02</div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h4>Personalized Assessment</h4>
+                    <p style="font-size: 1rem; margin-top: 10px;">Discuss your needs, clarify your goals, and collaborate on a personalized care plan.</p>
                 </div>
-
-                <!-- Step 3 -->
-                <div style="position: relative; z-index: 2;">
-                    <div style="width: 80px; height: 80px; background-color: var(--deep-green); color: white; display: flex; align-items: center; justify-content: center; font-size: 32px; font-family: 'Playfair Display', serif; border-radius: 8px; margin-bottom: 24px; box-shadow: 0 10px 20px rgba(11,94,60,0.2);">03</div>
-                    <h4 style="font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 12px;">03. Progress Check-Ins</h4>
-                    <p style="font-size: 16px; color: var(--charcoal-light); line-height: 1.6;">Regular evaluations to ensure therapy is effective.</p>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h4>Active Support</h4>
+                    <p style="font-size: 1rem; margin-top: 10px;">Engage in regular sessions focused on practical skill-building and personal empowerment.</p>
                 </div>
-
-                <!-- Step 4 -->
-                <div class="step-down" style="position: relative; z-index: 2; padding-top: 130px;">
-                    <h4 style="font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 12px;">04. Ongoing support</h4>
-                    <p style="font-size: 16px; color: var(--charcoal-light); line-height: 1.6; margin-bottom: 24px;">Continuous care and skill-building for long-term success.</p>
-                    <div style="width: 80px; height: 80px; background-color: var(--warm-gold); color: white; display: flex; align-items: center; justify-content: center; font-size: 32px; font-family: 'Playfair Display', serif; border-radius: 8px; box-shadow: 0 10px 20px rgba(194,155,69,0.2);">04</div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h4>Lasting Success</h4>
+                    <p style="font-size: 1rem; margin-top: 10px;">Build ongoing resilience, community connections, and sustained personal stability.</p>
                 </div>
-
             </div>
         </div>
-        
-        <style>
-            @media (max-width: 992px) {
-                .hide-on-mobile { display: none !important; }
-                .step-down { padding-top: 0 !important; display: flex; flex-direction: column; }
-                .step-down h4 { order: 1; }
-                .step-down p { order: 2; margin-bottom: 0 !important; }
-                .step-down > div { order: 0; margin-bottom: 24px !important; }
-                .section .container > div:first-child { text-align: left !important; }
-                .section .container > div:first-child > div { text-align: left !important; }
-            }
-        </style>
     </section>
 
-
-
-    <!-- About Us Feature Section -->
-    <section class="bg-white about-section-new" style="padding: 120px 0; overflow: hidden;">
-        <div class="container fade-up about-grid-new" style="max-width: 1500px; margin: 0 auto; padding: 0 20px;">
+    <!-- Why Choose Us Section -->
+    <section class="why-us-new">
+        <div class="container why-grid-new">
             
-            <!-- Left Side: Content -->
-            <div class="about-text-new" style="padding-right: 50px;">
-                <span style="color: var(--warm-gold); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 15px;">Why Choose Us</span>
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 46px; color: var(--charcoal); line-height: 1.15; margin-bottom: 24px; font-weight: 700;">
-                    Compassionate Care,<br>Expert Guidance.
-                </h2>
-                <p style="color: #666; font-size: 16px; line-height: 1.8; margin-bottom: 40px;">
-                    Professional therapy services designed to help clients address emotional concerns, stress, anxiety, depression, relationship difficulties, life transitions, substance use concerns, and other challenges affecting everyday life.
-                </p>
-                
-                <!-- Icon List (Features) -->
-                <ul style="list-style: none; padding: 0; margin-bottom: 0;">
-                    <li style="display: flex; align-items: flex-start; margin-bottom: 24px;">
-                        <div style="flex-shrink: 0; margin-right: 16px; margin-top: 2px; background-color: var(--soft-cream); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--warm-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--charcoal); margin-bottom: 6px; font-weight: 700;">Personalized Solutions</h4>
-                            <p style="color: #777; font-size: 16px; line-height: 1.6; margin-bottom: 0;">We tailor our therapeutic approaches to meet your unique needs and goals.</p>
-                        </div>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; margin-bottom: 24px;">
-                        <div style="flex-shrink: 0; margin-right: 16px; margin-top: 2px; background-color: var(--soft-cream); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--warm-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--charcoal); margin-bottom: 6px; font-weight: 700;">Proven Expertise</h4>
-                            <p style="color: #777; font-size: 16px; line-height: 1.6; margin-bottom: 0;">Our licensed professionals bring years of clinical experience to support your journey.</p>
-                        </div>
-                    </li>
-                    <li style="display: flex; align-items: flex-start; margin-bottom: 24px;">
-                        <div style="flex-shrink: 0; margin-right: 16px; margin-top: 2px; background-color: var(--soft-cream); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--warm-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--charcoal); margin-bottom: 6px; font-weight: 700;">Client-Centered Care</h4>
-                            <p style="color: #777; font-size: 16px; line-height: 1.6; margin-bottom: 0;">We provide a secure, non-judgmental space where your privacy and well-being are our highest priorities.</p>
-                        </div>
-                    </li>
-                    <li style="display: flex; align-items: flex-start;">
-                        <div style="flex-shrink: 0; margin-right: 16px; margin-top: 2px; background-color: var(--soft-cream); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--warm-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
-                        <div>
-                            <h4 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--charcoal); margin-bottom: 6px; font-weight: 700;">Whole-Person Perspective</h4>
-                            <p style="color: #777; font-size: 16px; line-height: 1.6; margin-bottom: 0;">Recognizing the emotional, relational, and life circumstances that affect your overall well-being.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Right Side: Overlapping Images -->
-            <div class="about-images-new" style="position: relative;">
-                <!-- Experience Badge -->
-                <div class="experience-badge fade-up" style="position: absolute; top: 15%; left: -30px; background: white; padding: 18px 24px; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); z-index: 5; display: flex; align-items: center; gap: 16px; border: 1px solid #f0f0f0;">
-                    <div style="background-color: var(--warm-gold); color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: bold; font-family: 'Playfair Display', serif;">
-                        15+
-                    </div>
-                    <div style="line-height: 1.2;">
-                        <span style="display: block; font-size: 16px; font-weight: 700; color: var(--charcoal); letter-spacing: 0.5px;">Years of</span>
-                        <span style="display: block; font-size: 16px; color: #777;">Expertise</span>
-                    </div>
+            <div class="why-content-new">
+                <div class="section-pre-heading light">
+                    <div class="pre-heading-line"></div>
+                    WHY CHOOSE US
                 </div>
-
-                <!-- Decorative squiggle top right -->
-                <svg class="deco-squiggle top-right" width="80" height="80" viewBox="0 0 80 80" fill="none" stroke="#dddddd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="10 10 30 30 10 50" />
-                    <polyline points="30 10 50 30 30 50" />
-                    <polyline points="50 10 70 30 50 50" />
-                </svg>
-                
-                <!-- Main Top-Left Image -->
-                <img src="assets/images/hero-doctor.jpg" alt="Therapist consulting" style="width: 75%; aspect-ratio: 4/5; object-fit: cover; object-position: right center; border-radius: 4px; position: relative; z-index: 2; box-shadow: 0 15px 40px rgba(0,0,0,0.08);">
-                
-                <!-- Secondary Bottom-Right Image -->
-                <img src="assets/images/about-secondary.jpg" alt="Therapy Session" style="width: 55%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px; position: absolute; bottom: -40px; right: 0; z-index: 3; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border: 12px solid white;">
-                
-                <!-- Decorative squiggle bottom left -->
-                <svg class="deco-squiggle bottom-left" width="120" height="40" viewBox="0 0 120 40" fill="none" stroke="#dddddd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M0 20 Q 15 0 30 20 T 60 20 T 90 20 T 120 20" />
-                </svg>
+                <h2>Dedicated to Walking Alongside You Every Step</h2>
+                <p>At Priority Success Associates, we offer a safe, respectful environment where individuals and families receive person-centered care tailored to their distinct goals and strengths.</p>
+                <div class="why-actions-new">
+                    <a href="#contact" class="btn-solid-white">Get Started</a>
+                    <a href="#about" class="btn-text-white">About Us &rarr;</a>
+                </div>
             </div>
+
+            <div class="why-masonry-grid">
+                <div class="why-column">
+                    <img src="assets/images/why_1.jpg" alt="Therapy session" class="why-img why-img-short">
+                    <img src="assets/images/why_2.jpg" alt="Support group" class="why-img why-img-tall">
+                </div>
+                <div class="why-column">
+                    <img src="assets/images/why_3.jpg" alt="Counseling" class="why-img why-img-tall">
+                    <img src="assets/images/why_4.jpg" alt="Community support" class="why-img why-img-short">
+                </div>
+            </div>
+
         </div>
-        
-        <style>
-            .about-grid-new {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-                align-items: center;
-            }
-            .deco-squiggle {
-                position: absolute;
-                z-index: 1;
-            }
-            .deco-squiggle.top-right {
-                top: 5%;
-                right: -10%;
-                opacity: 0.7;
-            }
-            .deco-squiggle.bottom-left {
-                bottom: -20px;
-                left: 10%;
-                opacity: 0.7;
-            }
-            @media (max-width: 991px) {
-                .about-grid-new {
-                    grid-template-columns: 1fr;
-                    gap: 80px;
-                }
-                .about-text-new {
-                    padding-right: 0 !important;
-                }
-                .about-images-new img:nth-child(4) {
-                    position: relative !important;
-                    width: 70% !important;
-                    margin-top: -80px;
-                    margin-left: auto;
-                    bottom: 0 !important;
-                }
-                .about-images-new img:nth-child(3) {
-                    width: 80% !important;
-                }
-                .deco-squiggle {
-                    display: none;
-                }
-                .about-section-new {
-                    padding: 80px 0 !important;
-                }
-                .experience-badge {
-                    left: -10px !important;
-                    top: 5% !important;
-                    padding: 12px 16px !important;
-                }
-                .experience-badge > div:first-child {
-                    width: 40px !important;
-                    height: 40px !important;
-                    font-size: 16px !important;
-                }
-            }
-        </style>
     </section>
 
-    <!-- Services Section -->
-    <section class="bg-cream text-center" style="background-color: var(--soft-cream); padding: 100px 0;">
-        <div class="container fade-up" style="max-width: 1500px; margin: 0 auto; padding: 0 20px;">
-            <span style="color: var(--warm-gold); font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 15px; font-family: 'Poppins', sans-serif;">Our Available Services</span>
-            <h2 style="color: var(--charcoal); font-family: 'Playfair Display', serif; font-size: 48px; line-height: 1.1; margin-bottom: 24px;">Support Designed Around You</h2>
-            <p style="color: #555; font-size: 16px; line-height: 1.7; max-width: 880px; margin: 0 auto 60px auto;">Every person has different experiences, strengths, challenges, and goals. Our comprehensive services are designed to provide individualized care based on where you are and <span style="white-space: nowrap;">where you want to go.</span></p>
-            
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px;">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <div class="section-pre-heading center light" style="margin-bottom: 1rem;">
+                    <span style="color: var(--color-gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;">TESTIMONIALS</span>
+                </div>
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 2.5rem; color: var(--color-charcoal);">Stories of Meaningful Change</h2>
+            </div>
+            <div class="testimonial-grid-new">
                 
                 <!-- Card 1 -->
-                <div class="service-card-new" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; text-align: left; transition: transform 0.4s ease, box-shadow 0.4s ease;">
-                    <div style="padding: 40px 30px 30px 30px; flex-grow: 1;">
-                        <div class="service-flaticon" style="margin-bottom: 24px; width: 64px; height: 64px;">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M10 2h4v3h-4z"></path>
-                                <path d="M12 2L12 0"></path>
-                                <path d="M8 5h8v2H8z"></path>
-                                <path d="M7 7v13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7"></path>
-                                <circle cx="12" cy="15" r="3.5"></circle>
-                                <path d="M12 13.5v3"></path>
-                                <path d="M10.5 15h3"></path>
-                            </svg>
-                        </div>
-                        <h4 style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--charcoal); margin-bottom: 16px; font-weight: 700;">Outpatient Therapy</h4>
-                        <p style="color: #666; font-size: 16px; line-height: 1.7; margin-bottom: 0;">Professional therapy services designed to help address emotional concerns and challenges affecting everyday life.</p>
+                <div class="testimonial-card-new border-gold">
+                    <div class="quote-icon-top">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="#f0f0f0" stroke="none"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
                     </div>
-                    
-                    <div style="display: flex; height: 140px;">
-                        <div style="flex-grow: 1; background-image: url('assets/images/hero-services.jpg'); background-size: cover; background-position: center;"></div>
-                        <a href="services.html#outpatient" class="service-action-block" style="width: 90px; background-color: var(--warm-gold); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background-color 0.3s ease;">
-                            <div class="action-circle" style="width: 48px; height: 48px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--warm-gold); transition: color 0.3s ease;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                            </div>
-                        </a>
+                    <p class="testimonial-text-new">"The support I received here was truly life-changing. They provided a safe, non-judgmental space where I finally felt heard, understood, and equipped to move forward."</p>
+                    <div class="testimonial-author-block">
+                        <div class="author-initial bg-green">M</div>
+                        <div class="author-info">
+                            <span class="author-name">M. Thompson</span>
+                            <span class="author-subtitle">THERAPY CLIENT</span>
+                        </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 2 -->
-                <div class="service-card-new" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; text-align: left; transition: transform 0.4s ease, box-shadow 0.4s ease;">
-                    <div style="padding: 40px 30px 30px 30px; flex-grow: 1;">
-                        <div class="service-flaticon" style="margin-bottom: 24px; width: 64px; height: 64px;">
-                            <svg width="64" height="64" viewBox="0 0 24 24">
-                                <circle cx="7" cy="8" r="2.5" fill="#D4AF37"></circle>
-                                <circle cx="12" cy="5" r="2.5" fill="#D4AF37"></circle>
-                                <circle cx="17" cy="8" r="2.5" fill="#D4AF37"></circle>
-                                <path d="M12 22c-4 0-6.5-2.5-6.5-5.5 0-1.8 1-2.8 2-3.8s2-1 4.5.8c2.5-1.8 3.5-.2 4.5.8 1 1 2 2 2 3.8C18.5 19.5 16 22 12 22z" fill="#D4AF37"></path>
-                                <path d="M12 13v4M10 15h4" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path>
-                            </svg>
-                        </div>
-                        <h4 style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--charcoal); margin-bottom: 16px; font-weight: 700;">Couples & Family</h4>
-                        <p style="color: #666; font-size: 16px; line-height: 1.7; margin-bottom: 0;">Support for relationships experiencing communication difficulties, conflict, or changing family dynamics.</p>
+                <div class="testimonial-card-new border-green">
+                    <div class="quote-icon-top">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="#f0f0f0" stroke="none"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
                     </div>
-                    
-                    <div style="display: flex; height: 140px;">
-                        <div style="flex-grow: 1; background-image: url('assets/images/hero-contact.jpg'); background-size: cover; background-position: center;"></div>
-                        <a href="services.html#couples" class="service-action-block" style="width: 90px; background-color: var(--warm-gold); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background-color 0.3s ease;">
-                            <div class="action-circle" style="width: 48px; height: 48px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--warm-gold); transition: color 0.3s ease;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                            </div>
-                        </a>
+                    <p class="testimonial-text-new">"The peer support program gave me the exact tools I needed. Having someone who truly understands the journey made all the difference in my personal growth."</p>
+                    <div class="testimonial-author-block">
+                        <div class="author-initial bg-charcoal">S</div>
+                        <div class="author-info">
+                            <span class="author-name">Sarah J.</span>
+                            <span class="author-subtitle">PEER SUPPORT</span>
+                        </div>
                     </div>
                 </div>
-                
+
                 <!-- Card 3 -->
-                <div class="service-card-new" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; text-align: left; transition: transform 0.4s ease, box-shadow 0.4s ease;">
-                    <div style="padding: 40px 30px 30px 30px; flex-grow: 1;">
-                        <div class="service-flaticon" style="margin-bottom: 24px; width: 64px; height: 64px;">
-                            <svg width="64" height="64" viewBox="0 0 24 24">
-                                <!-- People -->
-                                <circle cx="6" cy="18" r="2" fill="#6B4C9A"></circle>
-                                <path d="M3 23c0-2 1.5-3.5 3-3.5s3 1.5 3 3.5" fill="#4A7A59"></path>
-                                <circle cx="18" cy="18" r="2" fill="#6B4C9A"></circle>
-                                <path d="M15 23c0-2 1.5-3.5 3-3.5s3 1.5 3 3.5" fill="#4A7A59"></path>
-                                <circle cx="12" cy="16" r="2" fill="#6B4C9A"></circle>
-                                <path d="M9 23c0-2 1.5-3.5 3-3.5s3 1.5 3 3.5" fill="#D4AF37"></path>
-                                <!-- Brain -->
-                                <path d="M12 3a3 3 0 0 0-3 3 3 3 0 0 0-2 5.5 3 3 0 0 0 2 3.5v2h6v-2a3 3 0 0 0 2-3.5 3 3 0 0 0-2-5.5 3 3 0 0 0-3-3z" fill="#6B4C9A"></path>
-                                <!-- Connections -->
-                                <path d="M6 14v-2h3 M18 14v-2h-3 M12 14v2" stroke="#D4AF37" stroke-width="1.5" fill="none"></path>
-                                <path d="M12 4v8 M9 7c1-1 2 0 3-1 M15 7c-1-1-2 0-3-1" stroke="#D4AF37" stroke-width="1" fill="none"></path>
-                            </svg>
-                        </div>
-                        <h4 style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--charcoal); margin-bottom: 16px; font-weight: 700;">Peer Support</h4>
-                        <p style="color: #666; font-size: 16px; line-height: 1.7; margin-bottom: 0;">Individualized support from trained professionals who use lived experience to encourage recovery and independence.</p>
+                <div class="testimonial-card-new border-gold">
+                    <div class="quote-icon-top">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="#f0f0f0" stroke="none"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
                     </div>
+                    <p class="testimonial-text-new">"Working with the counselors at Priority Success helped our family rebuild trust and improve our communication in ways we never thought possible."</p>
+                    <div class="testimonial-author-block">
+                        <div class="author-initial bg-green">D</div>
+                        <div class="author-info">
+                            <span class="author-name">David R.</span>
+                            <span class="author-subtitle">FAMILY COUNSELING</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Appointment / Contact Section -->
+    <section id="contact" class="appointment-section">
+        <div class="container">
+            <div class="appointment-card">
+                <!-- Left Side: Information -->
+                <div class="appointment-info">
+                    <div class="section-pre-heading light" style="margin-bottom: 1rem;">
+                        <div class="pre-heading-line" style="background-color: var(--color-gold); width: 20px;"></div>
+                        <span style="color: var(--color-gold); font-size: 0.75rem;">GET IN TOUCH</span>
+                    </div>
+                    <h2 class="appointment-title">Begin your journey to<br>wellness today</h2>
+                    <p class="appointment-desc">Take the first step toward greater clarity, emotional stability, and personal resilience. Our compassionate team is here to provide welcoming, confidential care.</p>
                     
-                    <div style="display: flex; height: 140px;">
-                        <div style="flex-grow: 1; background-image: url('assets/images/hero-peer.jpg'); background-size: cover; background-position: center;"></div>
-                        <a href="peer-support.html" class="service-action-block" style="width: 90px; background-color: var(--warm-gold); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background-color 0.3s ease;">
-                            <div class="action-circle" style="width: 48px; height: 48px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--warm-gold); transition: color 0.3s ease;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    <div class="appointment-contacts">
+                        <div class="contact-box">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             </div>
-                        </a>
+                            <div class="contact-text">
+                                <span class="contact-label">DIRECT PHONE</span>
+                                <strong class="contact-value"><a href="tel:704-322-1178" style="color: #fff;">704-322-1178</a></strong>
+                            </div>
+                        </div>
+
+                        <div class="contact-box">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">ALTERNATE PHONE</span>
+                                <strong class="contact-value"><a href="tel:980-451-2344" style="color: #fff;">980-451-2344</a></strong>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-box">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">EMAIL ADDRESS</span>
+                                <strong class="contact-value"><a href="mailto:toppriority2021@gmail.com" style="color: #fff;">toppriority2021@gmail.com</a></strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="appointment-footer-trust" style="margin-top: 1.5rem;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <span>100% Confidential & Person-Centered Care</span>
                     </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="service-card-new" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; text-align: left; transition: transform 0.4s ease, box-shadow 0.4s ease;">
-                    <div style="padding: 40px 30px 30px 30px; flex-grow: 1;">
-                        <div class="service-flaticon" style="margin-bottom: 24px; width: 64px; height: 64px;">
-                            <svg width="64" height="64" viewBox="0 0 24 24">
-                                <path d="M2 20V6c0-1 1-2 2-2h6c1 0 2 1 2 2v14c0-1-1-2-2-2H4c-1 0-2 1-2 2z" fill="#D4AF37"></path>
-                                <path d="M22 20V6c0-1-1-2-2-2h-6c-1 0-2 1-2 2v14c0-1 1-2 2-2h6c1 0 2 1 2 2z" fill="#D4AF37"></path>
-                                <path d="M5 7h4 M5 9h4 M5 11h2 M15 7h4 M15 9h4 M15 11h2" stroke="#4A7A59" stroke-width="1.5" stroke-linecap="round"></path>
-                                <rect x="17" y="4" width="2" height="6" fill="#D9534F"></rect>
-                            </svg>
-                        </div>
-                        <h4 style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--charcoal); margin-bottom: 16px; font-weight: 700;">Substance Use</h4>
-                        <p style="color: #666; font-size: 16px; line-height: 1.7; margin-bottom: 0;">Therapy and peer support for individuals working through substance use concerns and relapse prevention.</p>
-                    </div>
+                <!-- Right Side: Form -->
+                <div class="appointment-form-wrapper">
+                    <h3>Request an Appointment</h3>
+                    <p class="form-subtitle">Fill out the form below and our care team will contact you promptly.</p>
                     
-                    <div style="display: flex; height: 140px;">
-                        <div style="flex-grow: 1; background-image: url('assets/images/hero-office.jpg'); background-size: cover; background-position: center;"></div>
-                        <a href="services.html#recovery" class="service-action-block" style="width: 90px; background-color: var(--warm-gold); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background-color 0.3s ease;">
-                            <div class="action-circle" style="width: 48px; height: 48px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--warm-gold); transition: color 0.3s ease;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    <form class="appointment-form" action="#" method="POST">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" placeholder="Your Name" required>
                             </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <a href="services.html" class="btn-icon" style="background-color: var(--deep-green); color: white;"><span class="icon-circle"><i class="fas fa-arrow-right" style="transform: rotate(-45deg);"></i></span>View All Services</a>
-        </div>
-        
-        <style>
-            .service-card-new:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
-            }
-            .service-card-new:hover .action-circle {
-                transform: scale(1.1);
-            }
-            .service-card-new:hover .service-action-block {
-                background-color: var(--deep-green) !important;
-            }
-            .service-card-new:hover .action-circle svg {
-                color: var(--deep-green) !important;
-            }
-            .btn-gold:hover {
-                background-color: var(--warm-gold) !important;
-                color: #111 !important;
-            }
-        </style>
-    </section>
-
-    <!-- Mission & Vision -->
-    <section class="bg-white">
-        <div class="container two-column fade-up">
-            <div>
-                <span class="eyebrow">OUR MISSION</span>
-                <h3>Empowering Meaningful Change</h3>
-                <p>Our mission is to provide compassionate, accessible outpatient therapy and peer support services that empower individuals and families to overcome challenges, recognize their strengths, develop practical skills, and create meaningful change in their lives.</p>
-            </div>
-            <div style="border-left: 2px solid var(--warm-gold); padding-left: 2rem;">
-                <span class="eyebrow">OUR VISION</span>
-                <h3>Tools for Lasting Success</h3>
-                <p>Our vision is for individuals and families to have the support, tools, and opportunities they need to experience personal growth, stronger relationships, greater independence, and lasting success.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="bg-cream">
-        <div class="container text-center fade-up" style="margin-bottom: 4rem;">
-            <span class="eyebrow" style="color: var(--warm-gold); margin-bottom: 12px; display: inline-block;">TESTIMONIALS</span>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 40px; color: var(--charcoal); font-weight: 700; margin-bottom: 0;">Stories of Meaningful Change</h2>
-        </div>
-        <div class="container fade-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-            
-            <!-- Testimonial 1 -->
-            <div style="background: white; padding: 40px; border-radius: var(--radius-md); box-shadow: 0 15px 35px rgba(0,0,0,0.04); position: relative; border-top: 4px solid var(--warm-gold);">
-                <div style="font-size: 80px; color: #f2efe9; font-family: 'Playfair Display', serif; position: absolute; top: -10px; left: 20px; line-height: 1; z-index: 0;">&ldquo;</div>
-                <p style="font-size: 16px; font-style: italic; color: #666; line-height: 1.8; position: relative; z-index: 1; margin-bottom: 24px; margin-top: 10px;">The therapy I received here was truly life-changing. They provided a safe, non-judgmental space where I finally felt heard, understood, and equipped to move forward.</p>
-                <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #f5f5f5; padding-top: 20px;">
-                    <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--deep-green); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: 'Playfair Display', serif; font-size: 20px;">M</div>
-                    <div>
-                        <h4 style="margin: 0; font-size: 16px; font-weight: 700; color: var(--charcoal); font-family: 'Playfair Display', serif;">M. Thompson</h4>
-                        <span style="font-size: 12px; color: var(--warm-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Therapy Client</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 2 -->
-            <div style="background: white; padding: 40px; border-radius: var(--radius-md); box-shadow: 0 15px 35px rgba(0,0,0,0.04); position: relative; border-top: 4px solid var(--deep-green);">
-                <div style="font-size: 80px; color: #f2efe9; font-family: 'Playfair Display', serif; position: absolute; top: -10px; left: 20px; line-height: 1; z-index: 0;">&ldquo;</div>
-                <p style="font-size: 16px; font-style: italic; color: #666; line-height: 1.8; position: relative; z-index: 1; margin-bottom: 24px; margin-top: 10px;">The peer support program gave me the exact tools I needed. Having someone who truly understands the journey made all the difference in my recovery.</p>
-                <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #f5f5f5; padding-top: 20px;">
-                    <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--charcoal); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: 'Playfair Display', serif; font-size: 20px;">S</div>
-                    <div>
-                        <h4 style="margin: 0; font-size: 16px; font-weight: 700; color: var(--charcoal); font-family: 'Playfair Display', serif;">Sarah J.</h4>
-                        <span style="font-size: 12px; color: var(--warm-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Peer Support</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div style="background: white; padding: 40px; border-radius: var(--radius-md); box-shadow: 0 15px 35px rgba(0,0,0,0.04); position: relative; border-top: 4px solid var(--warm-gold);">
-                <div style="font-size: 80px; color: #f2efe9; font-family: 'Playfair Display', serif; position: absolute; top: -10px; left: 20px; line-height: 1; z-index: 0;">&ldquo;</div>
-                <p style="font-size: 16px; font-style: italic; color: #666; line-height: 1.8; position: relative; z-index: 1; margin-bottom: 24px; margin-top: 10px;">Working with the counselors at Priority Success helped our family rebuild trust and improve our communication in ways we never thought possible.</p>
-                <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #f5f5f5; padding-top: 20px;">
-                    <div style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--deep-green); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: 'Playfair Display', serif; font-size: 20px;">D</div>
-                    <div>
-                        <h4 style="margin: 0; font-size: 16px; font-weight: 700; color: var(--charcoal); font-family: 'Playfair Display', serif;">David R.</h4>
-                        <span style="font-size: 12px; color: var(--warm-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Family Counseling</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CTA & Contact Section -->
-    <section class="bg-white" id="contact">
-        <div class="container two-column fade-up">
-            <div>
-                <h2>Ready to Begin Your Next Chapter?</h2>
-                <p>Meaningful change starts with taking the first step. Our team is here to provide compassionate support along the way.</p>
-                
-                <div class="mt-lg">
-                    <h3>Let's Start the Conversation</h3>
-                    <p>
-                        <strong>Priority Success Associates</strong><br>
-                        <small><em>*Address subject to verification</em></small><br>
-                        2442 Elendil Lane<br>
-                        Charlotte, NC 28269
-                    </p>
-                    <p>
-                        <strong>Phone:</strong> 704-322-1178<br>
-                        <strong>Alternate:</strong> 980-451-2344<br>
-                        <strong>Email:</strong> <a href="mailto:toppriority2021@gmail.com">toppriority2021@gmail.com</a>
-                    </p>
-                </div>
-            </div>
-            
-            <div class="contact-form-wrapper">
-                <form action="#" method="POST" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" class="form-control" required>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" placeholder="Your Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" placeholder="name@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Interested In *</label>
+                                <select id="service" required>
+                                    <option value="" disabled selected>Select a Service...</option>
+                                    <option value="outpatient">Outpatient Therapy</option>
+                                    <option value="individual">Individual Therapy</option>
+                                    <option value="couples-family">Couples & Family Therapy</option>
+                                    <option value="youth">Youth & Adolescent Therapy</option>
+                                    <option value="substance">Substance Use & Recovery Support</option>
+                                    <option value="peer">Peer Support Services</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" class="form-control" required>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">How Can We Help You? (Optional)</label>
+                            <textarea id="message" rows="3" placeholder="Briefly share what you are looking to address or any scheduling preferences..."></textarea>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" required>
+
+                        <div class="form-submit-row">
+                            <button type="submit" class="btn-submit-appointment">
+                                <div class="submit-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </div>
+                                Request Appointment
+                            </button>
+                            
+                            <div class="secure-badge">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--color-green)" stroke="var(--color-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                Confidential & Secure
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactMethod">Preferred Contact Method</label>
-                        <select id="contactMethod" class="form-control">
-                            <option value="phone">Phone</option>
-                            <option value="email">Email</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Interested In</label>
-                        <select id="service" class="form-control">
-                            <option value="outpatient">Outpatient Therapy</option>
-                            <option value="individual">Individual Therapy</option>
-                            <option value="couples">Couples Therapy</option>
-                            <option value="family">Family Therapy</option>
-                            <option value="youth">Youth & Adolescent Therapy</option>
-                            <option value="peer">Peer Support Services</option>
-                            <option value="substance">Substance Use & Recovery Support</option>
-                            <option value="general">Not Sure / General Inquiry</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="4" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-icon" style="width: 100%; justify-content: center;"><span class="icon-circle"><i class="fas fa-arrow-right" style="transform: rotate(-45deg);"></i></span>Submit Inquiry</button>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -903,71 +608,60 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 20px;">
-                        <a href="index.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: flex-start; text-align: left;">
-                            <span style="font-family: 'Playfair Display', serif; color: var(--white); font-size: 32px; font-weight: 700; line-height: 1;">Priority Success</span>
-                            <span style="font-family: 'Inter', sans-serif; color: var(--warm-gold); font-size: 13px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-top: 4px;">Associates</span>
-                        </a>
-                    </div>
-                    <p>"Change Your Mind. Change Your Life."</p>
-                    <p class="mt-sm">
+                    <a href="#home" class="footer-logo" style="display: block; margin-bottom: 1rem;">
+                        <img src="assets/images/logo.png" alt="Priority Success Associates Logo">
+                    </a>
+                    <p style="color: rgba(255,255,255,0.85); font-style: italic; margin-bottom: 0.75rem;">"Change Your Mind. Change Your Life."</p>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.6;">
                         2442 Elendil Lane<br>
                         Charlotte, NC 28269<br>
-                        <small><em>*Location pending verification</em></small>
+                        <small style="color: var(--color-earth-yellow); display: block; margin-top: 4px;">*Address pending final verification</small>
                     </p>
                 </div>
+
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="outpatient-therapy.html">Outpatient Therapy</a></li>
+                        <li><a href="individual-therapy.html">Individual Therapy</a></li>
+                        <li><a href="couples-family.html">Couples & Family</a></li>
+                        <li><a href="youth-adolescent.html">Youth & Adolescent</a></li>
+                        <li><a href="substance-use-support.html">Substance Use Support</a></li>
+                        <li><a href="peer-support-services.html">Peer Support Services</a></li>
+                    </ul>
+                </div>
+
                 <div class="footer-col">
                     <h4>Quick Links</h4>
-                    <ul class="footer-links">
+                    <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="who-we-are.html">Who We Are</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="peer-support.html">Peer Support</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="services.html#outpatient">Outpatient Therapy</a></li>
-                        <li><a href="services.html#individual">Individual Therapy</a></li>
-                        <li><a href="services.html#couples">Couples Therapy</a></li>
-                        <li><a href="services.html#family">Family Therapy</a></li>
-                        <li><a href="services.html#youth">Youth & Adolescent Therapy</a></li>
-                        <li><a href="peer-support.html">Peer Support</a></li>
-                        <li><a href="services.html#recovery">Substance Use & Recovery</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul class="footer-links">
-                        <li>704-322-1178</li>
-                        <li>980-451-2344</li>
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="tel:704-322-1178">704-322-1178</a></li>
+                        <li><a href="tel:980-451-2344">980-451-2344</a></li>
                         <li><a href="mailto:toppriority2021@gmail.com">toppriority2021@gmail.com</a></li>
+                        <li style="color: rgba(255,255,255,0.6); margin-top: 0.5rem; font-size: 0.9rem;">Mon &ndash; Fri: 9:00am &ndash; 6:00pm</li>
                     </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <div>&copy; 2026 Priority Success Associates. All rights reserved.</div>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Accessibility</a>
-                </div>
+                &copy; 2026 Priority Success Associates. All rights reserved.
             </div>
         </div>
     </footer>
 
+    <!-- Main Interactive Script -->
     <script src="assets/js/main.js"></script>
-    <script>
-        // Simple form prevention for mock
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your inquiry. A member of our team will contact you shortly.');
-            this.reset();
-        });
-    </script>
+
 </body>
 </html>
-
