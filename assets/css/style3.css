@@ -2466,3 +2466,28 @@ img {
     justify-content: flex-start !important;
   }
 }
+
+/* ==========================================================================
+   USER OVERRIDE: ENFORCE 16PX FONT SIZE FOR ALL POPPINS TEXT
+   ========================================================================== */
+body,
+p,
+li,
+a:not(.btn):not(.logo),
+span:not(.logo-text):not(.step-tag):not(.author-badge-circle):not(.hamburger-box):not(.hamburger-inner),
+label,
+input,
+textarea,
+.subpage-text,
+.feature-box p,
+.testimonial-quote-text,
+.nav-links a,
+.dropdown-menu a,
+.footer-links a,
+.footer-text,
+.footer-bottom,
+.contact-info p,
+.expectation-card p,
+.hero-content p {
+    font-size: 16px !important;
+}
