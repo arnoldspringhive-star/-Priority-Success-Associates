@@ -1810,7 +1810,7 @@ img {
   border-radius: var(--border-radius-lg);
   padding: 4rem 3rem;
   text-align: center;
-  margin: var(--spacing-xl) 0;
+  margin: var(--spacing-xl) 0 50px 0;
   position: relative;
   overflow: hidden;
 }
@@ -1940,6 +1940,53 @@ img {
 
   .about-us-page .page-hero h1 {
     font-size: 40px !important;
+  }
+
+}
+
+@media (max-width: 1440px) and (min-width: 1024px) {
+  .team-commitment-header {
+    max-width: 1100px !important;
+  }
+  .team-commitment-header h2 {
+    white-space: nowrap !important;
+  }
+  .expectation-steps {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .laptop-center-align {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .laptop-center-align,
+  .laptop-center-align h2,
+  .laptop-center-align p {
+    text-align: center !important;
+  }
+  .laptop-center-align .section-pre-heading {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 481px) {
+  .tablet-center-align,
+  .tablet-center-align h2,
+  .tablet-center-align p {
+    text-align: center !important;
+  }
+  .tablet-center-align .section-pre-heading {
+    justify-content: center !important;
+  }
+
+  .tablet-left-align,
+  .tablet-left-align h2,
+  .tablet-left-align p {
+    text-align: left !important;
+  }
+
+  .tablet-left-align .section-pre-heading {
+    justify-content: flex-start !important;
   }
 }
 
@@ -2363,6 +2410,23 @@ img {
     font-size: 0.95rem !important;
   }
 
+  .cta-banner-subpage {
+    text-align: left !important;
+  }
+  
+  .cta-banner-subpage h2,
+  .cta-banner-subpage p {
+    text-align: left !important;
+  }
+  
+  .cta-banner-subpage p {
+    margin: 0 0 2rem !important;
+  }
+
+  .cta-banner-subpage div[style*="justify-content: center"] {
+    justify-content: flex-start !important;
+  }
+
   .cta-banner-subpage .btn-secondary {
     display: none !important;
   }
@@ -2374,6 +2438,31 @@ img {
   }
 
   .team-commitment-header .section-pre-heading.center {
+    justify-content: flex-start !important;
+  }
+
+  .page-hero-content,
+  .page-hero-content h1,
+  .page-hero-content p {
+    text-align: left !important;
+  }
+
+  .page-hero-content .page-breadcrumbs {
+    justify-content: flex-start !important;
+  }
+  
+  .page-hero {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .mobile-left-align,
+  .mobile-left-align h2,
+  .mobile-left-align p {
+    text-align: left !important;
+  }
+
+  .mobile-left-align .section-pre-heading {
     justify-content: flex-start !important;
   }
 }
