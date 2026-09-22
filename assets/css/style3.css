@@ -562,7 +562,7 @@ img {
 
 .about-mission-card {
   position: absolute;
-  bottom: 0;
+  bottom: -30%;
   left: 5%;
   background-color: var(--color-cream);
   padding: 3rem 2.5rem;
@@ -2021,8 +2021,6 @@ img {
   }
 
   /* Hero Visuals explicitly hidden on tablet */
-  .hero-visuals,
-  .hero-main-img,
   .hero-shape {
     display: none !important;
   }
@@ -2138,7 +2136,7 @@ img {
 
   .about-mission-card {
     position: absolute;
-    bottom: 0;
+    bottom: -30%;
     left: 20px;
     width: calc(90% - 20px);
     max-width: 460px;
@@ -2233,8 +2231,6 @@ img {
   }
 
   /* Hero Visuals explicitly hidden on mobile */
-  .hero-visuals,
-  .hero-main-img,
   .hero-shape {
     display: none !important;
   }
