@@ -1902,11 +1902,12 @@ img {
     padding: 0.85rem 0 !important;
   }
 
-  /* Hide the girl and the green box in laptop, tablet, and mobile views */
-  .hero-visuals,
-  .hero-main-img,
+  /* Keep a simplified image visible in laptop, tablet, and mobile views */
   .hero-shape {
     display: none !important;
+  }
+  .hero-visuals {
+    margin-top: 2rem;
   }
 
   .hero {
