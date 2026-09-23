@@ -1942,6 +1942,11 @@ img {
   .about-us-page .page-hero h1 {
     font-size: 40px !important;
   }
+
+  .hero {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
 }
 
 @media (max-width: 1440px) {
