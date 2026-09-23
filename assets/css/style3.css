@@ -1942,7 +1942,9 @@ img {
   .about-us-page .page-hero h1 {
     font-size: 40px !important;
   }
+}
 
+@media (max-width: 1440px) {
   .hero-main-img {
     display: none !important;
   }
