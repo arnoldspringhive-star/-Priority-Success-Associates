@@ -1953,12 +1953,10 @@ img {
 
 @media (max-width: 1440px) and (min-width: 1024px) {
   .hero {
-    height: 500px !important;
     min-height: 500px !important;
-    max-height: 500px !important;
+    height: auto !important;
     padding-top: 100px !important;
-    padding-bottom: 20px !important;
-    overflow: hidden !important;
+    padding-bottom: 40px !important;
   }
   
   .team-commitment-header {
