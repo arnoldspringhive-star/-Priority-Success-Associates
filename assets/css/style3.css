@@ -1963,7 +1963,9 @@ img {
   
   .about-mission-card {
     bottom: 20px !important;
-    max-width: 380px !important;
+    left: 20px !important;
+    width: calc(100% - 40px) !important;
+    max-width: 100% !important;
     padding: 2rem 2rem !important;
   }
   
