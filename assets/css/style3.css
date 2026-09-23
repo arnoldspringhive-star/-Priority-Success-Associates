@@ -1943,6 +1943,9 @@ img {
     font-size: 40px !important;
   }
 
+  .hero-main-img {
+    display: none !important;
+  }
 }
 
 @media (max-width: 1440px) and (min-width: 1024px) {
