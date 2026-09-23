@@ -1955,6 +1955,10 @@ img {
   .hero {
     height: 500px !important;
     min-height: 500px !important;
+    max-height: 500px !important;
+    padding-top: 100px !important;
+    padding-bottom: 20px !important;
+    overflow: hidden !important;
   }
   
   .team-commitment-header {
