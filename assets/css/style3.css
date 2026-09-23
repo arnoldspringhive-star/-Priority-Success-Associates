@@ -1963,6 +1963,8 @@ img {
   
   .about-mission-card {
     bottom: 20px !important;
+    max-width: 380px !important;
+    padding: 2rem 2rem !important;
   }
   
   .team-commitment-header {
