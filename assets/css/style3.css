@@ -1953,9 +1953,9 @@ img {
 
 @media (max-width: 1440px) and (min-width: 1024px) {
   .hero {
-    height: 500px !important;
-    min-height: 500px !important;
-    max-height: 500px !important;
+    height: 700px !important;
+    min-height: 700px !important;
+    max-height: 700px !important;
     padding-top: 100px !important;
     padding-bottom: 100px !important;
     overflow: hidden !important;
