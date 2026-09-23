@@ -1914,7 +1914,7 @@ img {
     height: auto !important;
     min-height: 500px;
     padding: 3.5rem 0 4rem !important;
-    background-position: center center;
+    background-position: 100% 50% !important; /* Shifts image right to hide girl on left */
   }
 
   .hero-grid {
@@ -2036,7 +2036,7 @@ img {
     height: auto !important;
     min-height: 480px;
     padding: 3.5rem 0 4rem;
-    background-position: center center;
+    background-position: 100% 50% !important; /* Shifts image right to hide girl on left */
   }
 
   .hero-grid {
